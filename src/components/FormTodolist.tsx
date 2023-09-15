@@ -35,10 +35,13 @@ const AddTodolist = ({
         }
         if (type === "create") {
           const res = await api.create(values);
-          formik.resetForm();
+          if (res.status === 200) {
+            formik.resetForm();
+            alert("เพิ่มสำเร็จ");
+          }
         }
       } catch (err) {
-        alert("user not found");
+        alert("You can't add todolist 😭");
       }
     },
   });

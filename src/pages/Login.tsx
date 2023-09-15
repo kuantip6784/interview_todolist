@@ -51,6 +51,8 @@ const LoginPage = () => {
           >
             login
           </button>
+          <p>interview@mail.com</p>
+          <p>12345678</p>
         </div>
       </div>
     </div>

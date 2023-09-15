@@ -13,6 +13,12 @@ const Layout = () => {
     }
   }, [location.pathname]);
 
+  useEffect(() => {
+    if (Token !== undefined) {
+      navigate("/list");
+    }
+  }, []);
+
   const logout = () => {
     Cookies.remove("token");
     navigate("/login");

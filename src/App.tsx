@@ -14,7 +14,7 @@ function App() {
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<Layout />}>
-            <Route path="login" element={<LoginPage />} />
+            <Route index path="login" element={<LoginPage />} />
             <Route path="list" element={<List />} />
             <Route path="addTodolist" element={<Add />} />
             <Route path="update/:id" element={<UpdatePage />} />
