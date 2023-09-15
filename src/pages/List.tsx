@@ -1,17 +1,17 @@
 import React, { useEffect, useState } from "react";
 import ListsComponent from "components/ListsComponent";
 import api from "services";
-import Cookies from "js-cookie";
 import { useNavigate } from "react-router-dom";
+import { ITodolistType } from "interfaces/auth.interfacr";
 
-const List = () => {
-  const [toDolist, setTodoList] = useState([]);
+const ListPage = () => {
   const navigate = useNavigate();
+  const [toDolist, setTodoList] = useState<ITodolistType>([]);
   const getAll = async () => {
     try {
       const res = await api.getAll();
       if (res.status === 200) {
-        setTodoList(res.data);
+        setTodoList(res?.data);
       }
     } catch (err) {
       console.log(err);
@@ -24,6 +24,7 @@ const List = () => {
   const onDelete = async (id: string) => {
     const res = await api.delete(id);
     if (res.status === 200) {
+      alert(`ลบ ${id} สำเร็จ`);
       getAll();
     }
   };
@@ -45,4 +46,4 @@ const List = () => {
   );
 };
 
-export default List;
+export default ListPage;

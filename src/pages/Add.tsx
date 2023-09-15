@@ -1,6 +1,7 @@
+import React from "react";
 import FormTodolist from "components/FormTodolist";
 
-const Add = () => {
+const AddPage = () => {
   return (
     <div className="container mx-auto mt-10">
       <div className="flex container justify-center">
@@ -10,4 +11,4 @@ const Add = () => {
   );
 };
 
-export default Add;
+export default AddPage;

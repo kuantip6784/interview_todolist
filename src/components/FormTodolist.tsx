@@ -76,12 +76,21 @@ const AddTodolist = ({
             }
             error={formik.errors.description && formik.touched.description}
           />
-          <button
-            type="submit"
-            className="px-5 py-2 bg-blue-600 text-white rounded-lg mt-3"
-          >
-            add
-          </button>
+          <div className=" flex gap-3">
+            <button
+              type="submit"
+              className="px-5 py-2 bg-blue-600 text-white rounded-lg mt-3"
+            >
+              add
+            </button>
+            <button
+              type="submit"
+              className="px-3 py-2 bg-amber-500 text-white rounded-lg mt-3"
+              onClick={() => navigate("/list")}
+            >
+              cancel
+            </button>
+          </div>
         </form>
       </div>
     </>

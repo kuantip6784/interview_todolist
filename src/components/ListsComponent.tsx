@@ -1,17 +1,17 @@
+import { ITodolist, ITodolistType } from "interfaces/auth.interfacr";
 import { useNavigate } from "react-router-dom";
-import api from "services";
 
 const ListsComponent = ({
   data,
   onDelete,
 }: {
-  data: any;
-  onDelete: (e: any) => void;
+  data: ITodolistType;
+  onDelete: (e: string) => void;
 }) => {
   const navigate = useNavigate();
   return (
     <>
-      {data?.map((item: any, index: number) => {
+      {data?.map((item: ITodolist, index: number) => {
         return (
           <div
             className="w-[30%] border-[1px] shadow-sm rounded-lg px-4 py-2"
