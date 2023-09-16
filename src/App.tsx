@@ -6,7 +6,6 @@ import Layout from "pages/Layout";
 import LoginPage from "pages/Login";
 import AddPage from "pages/Add";
 import UpdatePage from "pages/update";
-
 function App() {
   return (
     <div className="App ">

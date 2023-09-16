@@ -34,6 +34,9 @@ const Layout = () => {
             <div className="block mt-2 lg:inline-block lg:mt-0 text-black text-lg mr-2 hover:bg-slate-300 px-4 py-3 rounded-lg">
               <Link to="/AddTodolist">Add</Link>
             </div>
+            <div className="block mt-2 lg:inline-block lg:mt-0 text-black text-lg mr-2 hover:bg-slate-300 px-4 py-3 rounded-lg">
+              <Link to="/LogicTest">LogicTest</Link>
+            </div>
           </div>
           {Token ? (
             <div className="block mt-2 lg:inline-block lg:mt-0 text-black text-lg hover:bg-slate-300 px-4 py-3 rounded-lg">
