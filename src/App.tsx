@@ -1,12 +1,11 @@
 import React from "react";
 import "./App.css";
-import List from "./pages/List";
+import ListPage from "./pages/List";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Layout from "pages/Layout";
 import LoginPage from "pages/Login";
-import Add from "pages/Add";
+import AddPage from "pages/Add";
 import UpdatePage from "pages/update";
-
 function App() {
   return (
     <div className="App ">
@@ -14,9 +13,9 @@ function App() {
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<Layout />}>
-            <Route path="login" element={<LoginPage />} />
-            <Route path="list" element={<List />} />
-            <Route path="addTodolist" element={<Add />} />
+            <Route index path="login" element={<LoginPage />} />
+            <Route path="list" element={<ListPage />} />
+            <Route path="addTodolist" element={<AddPage />} />
             <Route path="update/:id" element={<UpdatePage />} />
           </Route>
         </Routes>

@@ -13,6 +13,12 @@ const Layout = () => {
     }
   }, [location.pathname]);
 
+  useEffect(() => {
+    if (Token !== undefined) {
+      navigate("/list");
+    }
+  }, []);
+
   const logout = () => {
     Cookies.remove("token");
     navigate("/login");
@@ -27,6 +33,9 @@ const Layout = () => {
             </div>
             <div className="block mt-2 lg:inline-block lg:mt-0 text-black text-lg mr-2 hover:bg-slate-300 px-4 py-3 rounded-lg">
               <Link to="/AddTodolist">Add</Link>
+            </div>
+            <div className="block mt-2 lg:inline-block lg:mt-0 text-black text-lg mr-2 hover:bg-slate-300 px-4 py-3 rounded-lg">
+              <Link to="/LogicTest">LogicTest</Link>
             </div>
           </div>
           {Token ? (

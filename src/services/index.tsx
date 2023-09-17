@@ -25,7 +25,7 @@ const api = {
   getAll: () => axiosApi.get(`/todos`),
   getById: (id: string) => axiosApi.get(`/todos/${id}`),
   create: (data: any) => axiosApi.post("/todos", data),
-  update: (id: number, data: any) => axiosApi.put(`/todos/${id}`, data),
+  update: (id: string, data: any) => axiosApi.put(`/todos/${id}`, data),
   delete: (id: string) => axiosApi.delete(`/todos/${id}`),
 };
 
