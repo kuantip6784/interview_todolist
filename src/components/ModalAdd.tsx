@@ -6,6 +6,7 @@ import * as yup from "yup";
 import { useFormik } from "formik";
 import api from "services";
 import GetAll from "hooks";
+import TextareComponent from "./TextareComponent";
 
 const FormModal = ({
   title,
@@ -116,9 +117,8 @@ const FormModal = ({
                         {formik.errors.title}
                       </p>
                     )}
-                    <InputComponent
+                    <TextareComponent
                       label={"description"}
-                      type="text"
                       value={formik.values.description}
                       onChanges={(e) =>
                         formik.setFieldValue("description", e.target.value)

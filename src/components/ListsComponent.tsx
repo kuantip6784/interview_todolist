@@ -38,7 +38,7 @@ const ListsComponent = ({
             </div>
             <hr className=" my-2" />
             <p className=" text-sm font-bold text-right">
-              {dayjs(item?.updatedAt).format("DD-MM-YYYY")}
+              {dayjs(item?.updatedAt).format("DD-MM-YYYY h:mm A")}
             </p>
           </div>
         );

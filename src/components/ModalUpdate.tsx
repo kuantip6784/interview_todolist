@@ -4,6 +4,7 @@ import InputComponent from "./InputComponent";
 import * as yup from "yup";
 import { useFormik } from "formik";
 import api from "services";
+import TextareComponent from "./TextareComponent";
 
 const ModalUpdate = ({
   item,
@@ -54,7 +55,7 @@ const ModalUpdate = ({
     <>
       <svg
         onClick={openModal}
-        className="w-6 h-6 text-purple-500"
+        className="w-6 h-6 text-blue-500"
         aria-hidden="true"
         xmlns="http://www.w3.org/2000/svg"
         fill="currentColor"
@@ -118,9 +119,8 @@ const ModalUpdate = ({
                         {formik.errors.title}
                       </p>
                     )}
-                    <InputComponent
+                    <TextareComponent
                       label={"description"}
-                      type="text"
                       value={formik.values.description}
                       onChanges={(e) =>
                         formik.setFieldValue("description", e.target.value)
@@ -129,6 +129,7 @@ const ModalUpdate = ({
                         formik.errors.description && formik.touched.description
                       }
                     />
+
                     {formik.errors.description &&
                       formik.touched.description && (
                         <p
