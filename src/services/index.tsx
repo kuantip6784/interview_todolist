@@ -1,4 +1,4 @@
-import axios from "axios";
+import axios, { AxiosError, AxiosResponse } from "axios";
 import { IAuth } from "interfaces/auth.interfacr";
 import Cookies from "js-cookie";
 
@@ -12,10 +12,10 @@ const axiosApi = axios.create({
 });
 
 axiosApi.interceptors.response.use(
-  function (response) {
+  function (response: AxiosResponse) {
     return response;
   },
-  function (error) {
+  function (error: AxiosError) {
     return Promise.reject(error);
   }
 );

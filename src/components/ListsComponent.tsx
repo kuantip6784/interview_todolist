@@ -1,39 +1,45 @@
 import { ITodolist, ITodolistType } from "interfaces/auth.interfacr";
-import { useNavigate } from "react-router-dom";
+import ModalUpdate from "./ModalUpdate";
+import ModalDelete from "./ModalDelete";
+import dayjs from "dayjs";
 
 const ListsComponent = ({
-  data,
-  onDelete,
+  items,
+  onNewLoading,
 }: {
-  data: ITodolistType;
-  onDelete: (e: string) => void;
+  items: ITodolistType;
+  onNewLoading: () => void;
 }) => {
-  const navigate = useNavigate();
+  const sort =
+    items &&
+    items.sort((a: any, b: any) => (a.updatedAt < b.updatedAt ? 1 : -1));
+
   return (
     <>
-      {data?.map((item: ITodolist, index: number) => {
+      {sort?.map((item: ITodolist, index: number) => {
         return (
           <div
-            className="w-[30%] border-[1px] shadow-sm rounded-lg px-4 py-2"
+            className="border-[1px] border-white shadow-2xl w-full md:w-[48%] rounded-xl px-4 py-2 mb-3 bg-white text-black"
             key={index}
           >
-            <p className="text-base text-gray-500">title :</p>
-            <p className="text-base mb-3">{item.title || "-"}</p>
-
-            <p className="text-base text-gray-500">description</p>
-            <p className="text-base">{item.description || "-"}</p>
-            <button
-              className=" bg-red-600 px-3 py-1 rounded-lg mt-3 text-white mr-4"
-              onClick={() => onDelete(item._id)}
-            >
-              delete
-            </button>
-            <button
-              className=" bg-blue-600 px-3 py-1 rounded-lg mt-3 text-white"
-              onClick={() => navigate(`/update/:${item._id}`)}
-            >
-              update
-            </button>
+            <div className="flex justify-between my-2 cursor-pointer">
+              <p className="text-base font-normal text-[#666]">
+                {item.title || "-"}
+              </p>
+              <div className=" flex gap-5">
+                <ModalUpdate item={item} onNewLoading={onNewLoading} />
+                <ModalDelete item={item} onNewLoading={onNewLoading} />
+              </div>
+            </div>
+            <div className=" ">
+              <p className="text-xl font-bold mb-3 text-[#333]">
+                {item.description || "-"}
+              </p>
+            </div>
+            <hr className=" my-2" />
+            <p className=" text-sm font-bold text-right">
+              {dayjs(item?.updatedAt).format("DD-MM-YYYY")}
+            </p>
           </div>
         );
       })}
