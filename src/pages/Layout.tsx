@@ -130,7 +130,7 @@ const Layout = () => {
         </section>
       </main>
 
-      <div className="p-4 mt-12 md:mt-[100px]">
+      <div className="p-4 mt-20 md:mt-[100px]">
         <div className="flex items-center justify-center mb-4 rounded">
           <Outlet />
         </div>
