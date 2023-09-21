@@ -5,14 +5,9 @@ import * as yup from "yup";
 import { useFormik } from "formik";
 import api from "services";
 import TextareComponent from "./TextareComponent";
+import { IPropsModal } from "interfaces/todo.interface";
 
-const ModalUpdate = ({
-  item,
-  onNewLoading,
-}: {
-  item?: any;
-  onNewLoading: () => void;
-}) => {
+const ModalUpdate = ({ item, onNewLoading }: IPropsModal) => {
   const [isOpen, setIsOpen] = useState(false);
   const validationSchema = yup.object({
     title: yup.string().required(),

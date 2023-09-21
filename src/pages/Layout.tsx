@@ -76,7 +76,7 @@ const Layout = () => {
         >
           <article className="relative w-screen max-w-xs p-5 flex flex-col space-y-3 h-full pt-10">
             <button
-              className=" absolute right-[-15px] top-10 bg-blue-500 z-100 pl-1 pr-5 font-bold text-lg text-right text-white py-1 w-[40px] h-[40px] rounded-xl bg-p"
+              className=" absolute right-[-15px] top-10 bg-blue-500 z-100 pl-1 pr-5 font-bold text-lg text-right text-white py-1 w-[40px] h-[40px] rounded-3xl bg-p"
               onClick={() => {
                 setIsOpen(false);
               }}

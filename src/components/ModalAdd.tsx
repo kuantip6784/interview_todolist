@@ -1,22 +1,13 @@
-import { Dialog, Disclosure, Transition } from "@headlessui/react";
-import { Fragment, useEffect, useState } from "react";
+import { Dialog, Transition } from "@headlessui/react";
+import { Fragment, useState } from "react";
 import InputComponent from "./InputComponent";
-import { useNavigate } from "react-router-dom";
 import * as yup from "yup";
 import { useFormik } from "formik";
 import api from "services";
-import GetAll from "hooks";
 import TextareComponent from "./TextareComponent";
+import { IPropsModal } from "interfaces/todo.interface";
 
-const FormModal = ({
-  title,
-  item,
-  onNewLoading,
-}: {
-  title: string;
-  item?: any;
-  onNewLoading: () => void;
-}) => {
+const FormModal = ({ onNewLoading }: IPropsModal) => {
   const [isOpen, setIsOpen] = useState(false);
   const validationSchema = yup.object({
     title: yup.string().required(),
@@ -90,7 +81,7 @@ const FormModal = ({
                 <Dialog.Panel className="w-full max-w-md transform overflow-hidden rounded-2xl bg-white p-6 text-left align-middle shadow-xl transition-all">
                   <Dialog.Title as="div" className=" flex justify-between">
                     <p className=" text-lg font-bold leading-6 text-gray-900 mb-4">
-                      {title}
+                      Create Todo list
                     </p>
                     <div
                       onClick={closeModal}
