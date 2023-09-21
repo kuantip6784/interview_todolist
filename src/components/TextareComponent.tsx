@@ -1,3 +1,4 @@
+import { IIputprops } from "interfaces/input.interface";
 import React from "react";
 
 const TextareComponent = ({
@@ -5,12 +6,7 @@ const TextareComponent = ({
   value,
   onChanges,
   error = false,
-}: {
-  label: string;
-  value: any;
-  onChanges: (e: any) => void;
-  error?: any;
-}) => {
+}: IIputprops) => {
   return (
     <>
       <div className="container mx-auto mt-3">

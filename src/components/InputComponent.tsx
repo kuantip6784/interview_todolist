@@ -1,3 +1,4 @@
+import { IIputprops } from "interfaces/input.interface";
 import React from "react";
 
 const InputComponent = ({
@@ -6,13 +7,7 @@ const InputComponent = ({
   value,
   onChanges,
   error = false,
-}: {
-  label: string;
-  type: any;
-  value: any;
-  onChanges: (e: any) => void;
-  error?: any;
-}) => {
+}: IIputprops) => {
   return (
     <>
       <div className="container mx-auto mt-3">

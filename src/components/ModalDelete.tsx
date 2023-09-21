@@ -1,19 +1,9 @@
-import { Dialog, Disclosure, Transition } from "@headlessui/react";
-import { Fragment, useEffect, useState } from "react";
-import InputComponent from "./InputComponent";
-import { useNavigate } from "react-router-dom";
-import * as yup from "yup";
-import { useFormik } from "formik";
+import { Dialog, Transition } from "@headlessui/react";
+import { IPropsModal } from "interfaces/todo.interface";
+import { Fragment, useState } from "react";
 import api from "services";
-import GetAll from "hooks";
 
-const ModalDelete = ({
-  item,
-  onNewLoading,
-}: {
-  item: any;
-  onNewLoading: () => void;
-}) => {
+const ModalDelete = ({ item, onNewLoading }: IPropsModal) => {
   const [isOpen, setIsOpen] = useState(false);
   const closeModal = () => {
     setIsOpen(false);
@@ -86,9 +76,9 @@ const ModalDelete = ({
                       X
                     </div>
                   </Dialog.Title>
-                  <div className=" flex gap-2 my-4">
+                  <div className=" flex gap-2 mt-3 justify-end">
                     <button
-                      className="flex items-center gap-2 rounded-md font-bold bg-gradient-to-l from-fuchsia-500 to-red-500 mb-3 px-4 py-2 text-sm text-white hover:bg-opacity-30 focus:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-opacity-75"
+                      className="flex items-center gap-2 rounded-md font-bold bg-gradient-to-l from-fuchsia-500 to-red-500 px-4 py-2 text-sm text-white hover:bg-opacity-30 focus:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-opacity-75"
                       onClick={onDelete}
                     >
                       <svg
@@ -104,7 +94,7 @@ const ModalDelete = ({
                     </button>
                     <button
                       onClick={closeModal}
-                      className="rounded-md font-bold bg-gradient-to-l from-cyan-500 to-blue-500 mb-3 px-4 py-2 text-sm text-white hover:bg-opacity-30 focus:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-opacity-75"
+                      className="rounded-md font-bold bg-gradient-to-l from-cyan-500 to-blue-500 px-4 py-2 text-sm text-white hover:bg-opacity-30 focus:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-opacity-75"
                     >
                       Cancel
                     </button>

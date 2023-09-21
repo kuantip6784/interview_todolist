@@ -1,18 +1,11 @@
-import { ITodolist, ITodolistType } from "interfaces/auth.interfacr";
 import ModalUpdate from "./ModalUpdate";
 import ModalDelete from "./ModalDelete";
 import dayjs from "dayjs";
+import { IPropsModal, ITodolist } from "interfaces/todo.interface";
 
-const ListsComponent = ({
-  items,
-  onNewLoading,
-}: {
-  items: ITodolistType;
-  onNewLoading: () => void;
-}) => {
+const ListsComponent = ({ item, onNewLoading }: IPropsModal) => {
   const sort =
-    items &&
-    items.sort((a: any, b: any) => (a.updatedAt < b.updatedAt ? 1 : -1));
+    item && item.sort((a: any, b: any) => (a.updatedAt < b.updatedAt ? 1 : -1));
 
   return (
     <>
