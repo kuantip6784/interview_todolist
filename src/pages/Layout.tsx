@@ -26,7 +26,7 @@ const Layout = () => {
   };
   return (
     <>
-      <div className=" fixed top-0 p-3 border-[1px] w-full">
+      <div className=" fixed top-0 p-3 border-[1px] w-full bg-white">
         <div className="container max-w-screen-md mx-auto">
           <div className=" flex justify-between items-center">
             {isOpen === false ? (
@@ -53,7 +53,7 @@ const Layout = () => {
             )}
             <button
               onClick={logout}
-              className="flex gap-2 items-center border-[1px] font-bold border-red-500 px-5 py-2 rounded-xl text-red-500 hover:text-white hover:bg-gradient-to-r from-red-500 to-pink-500"
+              className="flex gap-2 items-center border-[1px] font-bold border-red-500 px-5 py-2 rounded-xl  text-white bg-gradient-to-r from-red-500 to-pink-500"
             >
               Sign out
             </button>

@@ -52,11 +52,11 @@ const FormModal = ({
 
   return (
     <>
-      <div className="flex items-center ">
+      <div className="flex items-center">
         <button
           type="button"
           onClick={openModal}
-          className="rounded-md font-extrabold text-lg hover:bg-gradient-to-l from-cyan-500 to-blue-500 mb-3 px-4 py-2 text-white"
+          className="font-extrabold text-lg bg-white px-4 py-2 text-black w-full mb-5 shadow-lg rounded-[100px]"
         >
           Add +
         </button>
